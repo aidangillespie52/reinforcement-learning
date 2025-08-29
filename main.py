@@ -20,7 +20,7 @@ class FNN(nn.Module):
         for hd in self.hidden_layers:
             x = nn.ReLU(hd(x))
         
-        x = nn.Softmax(self.out_layer)
+        x = nn.Softmax(self.out_layer(x))
         
         return x
     
