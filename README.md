@@ -22,6 +22,8 @@ state → action → reward → state → ...
     - If **γ = 1**, the agent treats all future and immediate rewards equally  
     - If **0 < γ < 1**, it balances short-term and long-term rewards
 
+- **Trajectory**: basically sequence of states, actions, and rewards after following policy
+
 ---
 
 ## Return (Total Reward)
