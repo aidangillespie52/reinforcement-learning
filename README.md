@@ -23,7 +23,9 @@ state → action → reward → state → ...
     - If **0 < γ < 1**, it balances short-term and long-term rewards
 
 - **Trajectory**: basically sequence of states, actions, and rewards after following policy
-
+- **Value Functions**: keep track of average return G<sub>t</sub> given a policy in a certain state or state and action
+    - state-value V<sub>policy</sub>(s)
+    - action-value Q<sub>policy</sub>(s,a)
 ---
 
 ## Return (Total Reward)
