@@ -1,7 +1,37 @@
 from config import maze
-import torch.nn as nn
-from torch.autograd import Function
+from environment import MyEnv
+from enum import Enum
 
+import torch.nn as nn
+
+
+class MazeEnv(MyEnv):
+    class Actions(Enum):
+        LEFT: 0
+        UP: 1
+        RIGHT: 2
+        DOWN: 3
+        
+    def __init__(self, board=None):
+        super().__init__()
+        self.reset(board)
+    
+    def reset(self, board):
+        # TODO: doesn't account for if board isn't lists inside list
+        if not board:
+            self.board = maze
+        else:
+            self.board = board
+        
+        self.num_rows = len(board)
+        self.num_cols = len(board[0])
+        
+        self.player_location = (0,0)
+    
+    def step(self, action):
+        if action not in self.Actions:
+            return ValueError("Invalid action performed.")        
+    
 class FNN(nn.Module):
     def __init__(self, num_hidden_layers=3, num_neurons=64):
         super().__init__()
@@ -27,5 +57,9 @@ class FNN(nn.Module):
 
 class PolicyGradient:
     def __init__(self):
+        self.policy = FNN()
+        self.trajectories = []
+    
+    def run_episode():
         pass
     
