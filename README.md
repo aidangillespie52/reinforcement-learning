@@ -29,7 +29,7 @@ state → action → reward → state → ...
 Denoted as **G<sub>t</sub>**:
 
 \[
-G<sub>t</sub> = r<sub>t</sub> + γr<sub>t+1</sub> + γ<sup>2</sub>r<sub>t+2</sub> + \dots
+G<sub>t</sub> = r<sub>t</sub> + γr<sub>t+1</sub> + γ<sup>2</sup>r<sub>t+2</sub> + \dots
 \]
 
 ## Goal
